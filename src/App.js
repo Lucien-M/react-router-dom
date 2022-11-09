@@ -1,3 +1,4 @@
+import "./App.css";
 import { useEffect, useState, useRef, Fragment } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Gallery from "./components/Gallery";
@@ -37,29 +38,24 @@ function App() {
   };
 
   return (
-    <div>
+    <div className="App">
       {message}
       <Router>
         <Routes>
           <Route
             path="/"
             element={
-              <Fragment>
+              <>
                 <SearchContext.Provider
-                  value={{
-                    term: searchInput,
-                    handleSearch: handleSearch
-                  }}
+                  value={{ term: searchInput, handleSearch: handleSearch }}
                 >
                   <SearchBar />
                 </SearchContext.Provider>
-                {message}
+
                 <DataContext.Provider value={data}>
                   <Gallery />
                 </DataContext.Provider>
-                <AlbumView />
-                <ArtistView />
-              </Fragment>
+              </>
             }
           />
           <Route path="/album/:id" element={<AlbumView />} />
