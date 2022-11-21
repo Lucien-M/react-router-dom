@@ -1,7 +1,11 @@
 // These components will be making separate API calls from the app
 // component to serve specific data about a given album
 import { useState, useEffect } from "react";
+<<<<<<< HEAD
 import { useParams, Link, useNavigate } from "react-router-dom";
+=======
+import { useParams, useNavigate } from "react-router-dom";
+>>>>>>> with_suspense
 
 function AlbumView() {
   const navigate = useNavigate();
@@ -23,12 +27,20 @@ function AlbumView() {
   const renderSongs = justSongs.map((song, i) => {
     return (
       <div key={i}>
+<<<<<<< HEAD
         <Link to={`/song/${song.trackId}`}>
           <p>{song.trackName}</p>
         </Link>
       </div>
     );
   });
+=======
+        <p>{song.trackName}</p>
+      </div>
+    );
+  });
+
+>>>>>>> with_suspense
   const navButtons = () => {
     return (
       <div>

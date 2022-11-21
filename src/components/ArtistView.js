@@ -1,11 +1,11 @@
 // These components will be making separate API calls from the app
-// component to serve specific data about our artist
 import { useState, useEffect } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 
 function ArtistView() {
   const navigate = useNavigate();
   const { id } = useParams();
+  // eslint-disable-next-line
   const [artistData, setArtistData] = useState([]);
 
   useEffect(() => {
@@ -29,6 +29,10 @@ function ArtistView() {
       </div>
     );
   });
+<<<<<<< HEAD
+=======
+
+>>>>>>> with_suspense
   const navButtons = () => {
     return (
       <div>
@@ -38,6 +42,10 @@ function ArtistView() {
       </div>
     );
   };
+<<<<<<< HEAD
+=======
+
+>>>>>>> with_suspense
   return (
     <div>
       {artistData.length > 0 ? (

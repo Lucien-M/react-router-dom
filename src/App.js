@@ -47,14 +47,11 @@ function App() {
             element={
               <>
                 <SearchContext.Provider
-                  value={{
-                    term: searchInput,
-                    handleSearch: handleSearch
-                  }}
+                  value={{ term: searchInput, handleSearch: handleSearch }}
                 >
                   <SearchBar />
                 </SearchContext.Provider>
-                {message}
+
                 <DataContext.Provider value={data}>
                   <Gallery />
                 </DataContext.Provider>
